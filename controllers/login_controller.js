@@ -15,3 +15,11 @@ module.exports.postLogin = (req, res, next) => {
     
     res.send({"id":0, "usuario":usuario})
 }
+
+module.exports.putLogin = (req, res, next) => {
+    //alterando 
+}
+
+module.exports.deleteLogin = (req, res, next) => {
+    //deletando
+}

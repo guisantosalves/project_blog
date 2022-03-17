@@ -18,6 +18,7 @@ module.exports.postingPost = (req, res, next) =>{
 
 module.exports.putPost = (req, res, next) =>{
     //alterando post
+    
 }
 
 module.exports.deletePost = (req, res, next) =>{

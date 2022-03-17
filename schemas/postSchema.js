@@ -1,6 +1,8 @@
 var mongoose = require('mongoose');
 var db = require('../connection/db');
 
+//abrindo conexao
+db();
 
 const postsSchema = mongoose.Schema({
     titulo:  String, // String is shorthand for {type: String}

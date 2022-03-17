@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var login_controller = require('../controllers/login_controller')
+var db = require('../connection/db')
 
 /* rotas do login */
 router.get('/getlogin', login_controller.getDataLogin);

@@ -1,7 +1,6 @@
 var modelLogin = require('../schemas/loginSchema');
 
 module.exports.getDataLogin = (req, res, next) => {
-    res.send("eae")
     // modelLogin.find({}, (err, data)=>{
     //     res.send(data)
     // })

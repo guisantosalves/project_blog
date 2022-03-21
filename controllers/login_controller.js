@@ -1,16 +1,23 @@
+var mongoose = require('mongoose');
 var modelLogin = require('../schemas/loginSchema');
 
 module.exports.getDataLogin = (req, res, next) => {
-    // modelLogin.find({}, (err, data)=>{
-    //     res.send(data)
-    // })
+    modelLogin.find({}, (err, data)=>{
+       res.send(data)
+    })
 }
 
 module.exports.postLogin = (req, res, next) => {
-    var usuario = req.body.usuario;
-    var senha = req.body.senha;
     
-    
+    var login = new modelLogin({
+        usuario: req.body.usuario,
+        senha: req.body.senha
+    });
+
+    login.save().then(result=>{
+        res.status(200);
+        res.send(result)
+    })
 }
 
 module.exports.putLogin = (req, res, next) => {

@@ -25,5 +25,8 @@ module.exports.putLogin = (req, res, next) => {
 }
 
 module.exports.deleteLogin = (req, res, next) => {
-    //deletando
+    modelLogin.find({id:req.params}).remove().exec((result)=>{
+        res.send("excluído com sucesso")
+    })
+    
 }

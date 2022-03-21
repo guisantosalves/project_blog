@@ -5,7 +5,7 @@ var db = require('../connection/db')
 db();
 
 const loginSchema = mongoose.Schema({
-    usuario:  String, 
+    usuario: String, 
     senha: String
 });
 

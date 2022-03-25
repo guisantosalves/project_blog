@@ -9,6 +9,6 @@ const loginSchema = mongoose.Schema({
     senha: String
 });
 
-const login = mongoose.model('post', loginSchema, 'blog');
+const login = mongoose.model('login', loginSchema);
 
 module.exports = login;

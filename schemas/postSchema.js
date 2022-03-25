@@ -13,6 +13,6 @@ const postsSchema = mongoose.Schema({
     dontlike: Number
 }, {collection: 'posts'});
 
-const post = mongoose.model('posts', postsSchema, 'blog')
+const post = mongoose.model('posts', postsSchema)
 
 module.exports = post;

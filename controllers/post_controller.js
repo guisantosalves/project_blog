@@ -1,4 +1,5 @@
 var modelPost = require("../schemas/postSchema");
+const {validationResult} = require('express-validator');
 
 module.exports.getPost = (req, res, next) => {
   try{
@@ -14,6 +15,10 @@ module.exports.getPost = (req, res, next) => {
 
 module.exports.postingPost = (req, res, next) => {
   try{
+    const errors = validationResult(req);
+    if(!errors.isEmpty()){
+      return res.status(400).json({errors: errors.array()})
+    }
     var newpost = new modelPost({
       titulo: req.body.titulo, 
       autor: req.body.autor,
@@ -34,6 +39,10 @@ module.exports.postingPost = (req, res, next) => {
 
 module.exports.putPost = (req, res, next) => {
   try{
+    const errors = validationResult(req);
+    if(!errors.isEmpty()){
+      return res.status(400).json({errors: errors.array()})
+    }
     var id = req.params.id;
     const newPost = {
       titulo: req.body.titulo, 

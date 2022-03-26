@@ -3,6 +3,7 @@ var modelPost = require("../schemas/postSchema");
 module.exports.getPost = (req, res, next) => {
   try{
     modelPost.find({}, (err, data)=>{
+        res.status(200);
         res.send(data);
     })
   }catch(err){
@@ -33,7 +34,7 @@ module.exports.postingPost = (req, res, next) => {
 
 module.exports.putPost = (req, res, next) => {
   try{
-    id =  req.params.id;
+    var id = req.params.id;
     const newPost = {
       titulo: req.body.titulo, 
       autor: req.body.autor,
@@ -50,10 +51,25 @@ module.exports.putPost = (req, res, next) => {
       }
     })
   }catch(err){
-    res.send(err).json({error: err});
+    res.send(err);
+    res.status(400).json({error: err});
   }
 };
 
 module.exports.deletePost = (req, res, next) => {
-  //deletando post
+  try{
+    var id = req.params.id;
+    //obj with id and the callback function
+    modelPost.findByIdAndDelete({_id: id}, (err, docs)=>{
+      if(err){
+        res.send(err);
+      }else{
+        res.status(200);
+        res.send("Excluído com sucesso!!");
+      }
+    })
+  }catch(err){
+    res.send(err);
+    res.status(400).json({error: err});
+  }
 };

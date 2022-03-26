@@ -6,7 +6,7 @@ var postController = require('../controllers/post_controller');
 /* rotas dos posts do blog */
 router.get('/getpost', postController.getPost);
 router.post('/posting', postController.postingPost);
-router.put('/putPost/:id', postController.putPost);
-router.delete('/deletePost', postController.deletePost)
+router.put('/putpost/:id', postController.putPost);
+router.delete('/deletepost/:id', postController.deletePost)
 
 module.exports = router;

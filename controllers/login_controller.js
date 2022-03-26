@@ -37,6 +37,10 @@ module.exports.postLogin = (req, res, next) => {
 
 module.exports.putLogin = (req, res, next) => {
   try {
+    const errors = validationResult(req);
+    if(!errors.isEmpty()){
+      return res.status(400).json({errors: errors.array()});
+    }
     var id = req.params.id;
     var newLogin = {
       usuario: req.body.usuario,

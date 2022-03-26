@@ -1,5 +1,6 @@
 var mongoose = require("mongoose");
 var modelLogin = require("../schemas/loginSchema");
+const {validationResult} = require('express-validator');
 
 module.exports.getDataLogin = (req, res, next) => {
   try {
@@ -15,6 +16,10 @@ module.exports.getDataLogin = (req, res, next) => {
 
 module.exports.postLogin = (req, res, next) => {
   try {
+    const errors = validationResult(req);
+    if(!errors.isEmpty()){
+      return res.status(400).json({errors: errors.array()});
+    }
     var login = new modelLogin({
       usuario: req.body.usuario,
       senha: req.body.senha,

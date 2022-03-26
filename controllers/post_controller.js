@@ -15,6 +15,8 @@ module.exports.getPost = (req, res, next) => {
 
 module.exports.postingPost = (req, res, next) => {
   try{
+    // errors.isEmpty()  -> se ele estiver vazio retorna true
+    // !errrors.isEmpty() -> se ele não estiver vazio retorna true (ou seja, tiver erros)
     const errors = validationResult(req);
     if(!errors.isEmpty()){
       return res.status(400).json({errors: errors.array()})
@@ -39,6 +41,8 @@ module.exports.postingPost = (req, res, next) => {
 
 module.exports.putPost = (req, res, next) => {
   try{
+    // errors.isEmpty()  -> se ele estiver vazio retorna true
+    // !errrors.isEmpty() -> se ele não estiver vazio retorna true (ou seja, tiver erros)
     const errors = validationResult(req);
     if(!errors.isEmpty()){
       return res.status(400).json({errors: errors.array()})

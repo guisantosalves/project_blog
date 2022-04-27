@@ -8,8 +8,8 @@ module.exports.getDataLogin = (req, res, next) => {
     modelLogin.find({}, (err, data) => {
       res.status(200);
       //criptografando
-      var cipherText = cryptoJS.AES.encrypt(JSON.stringify(data), 'secret key 1234').toString();
-      
+      var cipherText = cryptoJS.AES.encrypt(JSON.stringify(data), //chavevaiaq).toString();
+
       //mandando o dado criptografado
       res.send(cipherText);
     });

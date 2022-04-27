@@ -2,14 +2,15 @@ var mongoose = require("mongoose");
 var modelLogin = require("../schemas/loginSchema");
 const {validationResult} = require('express-validator');
 const cryptoJS = require("crypto-js");
+require('dotenv').config()
 
 module.exports.getDataLogin = (req, res, next) => {
   try {
     modelLogin.find({}, (err, data) => {
       res.status(200);
       //criptografando
-      var cipherText = cryptoJS.AES.encrypt(JSON.stringify(data), //chavevaiaq).toString();
-
+      var cipherText = cryptoJS.AES.encrypt(JSON.stringify(data), process.env.AES_KEY).toString();
+      
       //mandando o dado criptografado
       res.send(cipherText);
     });

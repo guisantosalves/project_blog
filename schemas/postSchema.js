@@ -8,7 +8,8 @@ const postsSchema = mongoose.Schema({
     titulo:  String, // String is shorthand for {type: String}
     autor: String,
     conteudo: String,
-    data: { type: Date, default: Date.now },
+    // data: { type: Date, default: Date.now },
+    data: Date,
 }, {collection: 'posts'});
 
 const post = mongoose.model('posts', postsSchema)

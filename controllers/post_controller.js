@@ -25,8 +25,6 @@ module.exports.postingPost = (req, res, next) => {
       titulo: req.body.titulo, 
       autor: req.body.autor,
       conteudo: req.body.conteudo,
-      like: req.body.like,
-      dontlike: req.body.dontlike
     });
 
     newpost.save().then(result=>{
@@ -52,8 +50,6 @@ module.exports.putPost = (req, res, next) => {
       titulo: req.body.titulo, 
       autor: req.body.autor,
       conteudo: req.body.conteudo,
-      like: req.body.like,
-      dontlike: req.body.dontlike
     }
     modelPost.findByIdAndUpdate(id, newPost, (err, docs)=>{
       if(err){

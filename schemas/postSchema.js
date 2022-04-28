@@ -9,8 +9,6 @@ const postsSchema = mongoose.Schema({
     autor: String,
     conteudo: String,
     data: { type: Date, default: Date.now },
-    like: Number,
-    dontlike: Number
 }, {collection: 'posts'});
 
 const post = mongoose.model('posts', postsSchema)

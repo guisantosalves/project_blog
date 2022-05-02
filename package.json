@@ -1,9 +1,9 @@
 {
-  "name": "project-blog",
+  "name": "api-blog-gui",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

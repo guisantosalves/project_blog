@@ -9,10 +9,8 @@ module.exports.getDataLogin = (req, res, next) => {
     modelLogin.find({}, (err, data) => {
       res.status(200);
       //criptografando
-      var cipherText = cryptoJS.AES.encrypt(JSON.stringify(data), process.env.AES_KEY).toString();
       
-      //mandando o dado criptografado
-      res.send(cipherText);
+      res.send(data);
     });
   } catch (err) {
     res.send(err);

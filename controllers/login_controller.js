@@ -8,8 +8,6 @@ module.exports.getDataLogin = (req, res, next) => {
   try {
     modelLogin.find({}, (err, data) => {
       res.status(200);
-      //criptografando
-      
       res.send(data);
     });
   } catch (err) {

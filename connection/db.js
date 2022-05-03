@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
+const db = process.env.MONGODB_URL;
 
 module.exports = () => {
   //deve ser uma function para exportar a conexao
   mongoose.connect(
-    "mongodb+srv://guizaodozap:paodequeijo123@cluster0.wx08a.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    db,
     { useNewUrlParser: true, useUnifiedTopology: true },
     (err) => {
       if (!err) {

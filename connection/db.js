@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 module.exports = () => {
     //deve ser uma function para exportar a conexao
-    mongoose.connect('mongodb://localhost:27017/blog', {useNewUrlParser: true, useUnifiedTopology: true}, (err)=>{
+    mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true}, (err)=>{
         if(!err){
             console.log("Conectado com sucesso")
         }else{

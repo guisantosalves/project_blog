@@ -13,4 +13,8 @@ router.put('/putlogin/:id', body('usuario').not().isEmpty().withMessage("nao pod
 
 router.delete('/deletelogin/:id', login_controller.deleteLogin);
 
+router.get('/funcionou', (req, res)=>{
+    res.send("funcionou")
+})
+
 module.exports = router;

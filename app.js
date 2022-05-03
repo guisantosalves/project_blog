@@ -23,6 +23,9 @@ app.use(cors());
 
 app.use('/api/v1', loginRoutes);
 app.use('/api/v1', postRouter);
+app.use('/', (req, res)=>{
+  res.send("<h1>Bem vindo ao meu blog</h1>")
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -7,10 +7,7 @@ var modelLogin = require("../schemas/loginSchema");
 
 /* rotas do login */
 router.get("/getlogin", (req, res) => {
-  modelLogin.find({}, (err, data) => {
-    res.status(200);
-    res.send(data);
-  });
+    res.send("eaeaeae")
 
   //   try {
   //     modelLogin.find({}, (err, data) => {
